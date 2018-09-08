@@ -15,10 +15,11 @@ class Shelters extends Component {
       });
     });
   }
+
   render() {
     return (
       <div>
-        <ShelterHeader />
+        <ShelterHeader shelter={this.state.shelter} />
         <h1>Shelter home</h1>
         <ShelterFooter />
       </div>
