@@ -1,8 +1,20 @@
 import React, { Component } from "react";
 import ShelterHeader from "./ShelterHeader";
 import ShelterFooter from "./ShelterFooter";
+import * as api from '../../helpers/api'
 
 class Shelters extends Component {
+  state = {
+    shelter: {}
+  }
+  componentDidMount() {
+    const shelterId = this.props.match.params.shelterId
+    api.getSingleShelter(shelterId).then(data => {
+      this.setState({
+        shelter: data
+      });
+    });
+  }
   render() {
     return (
       <div>
